@@ -1,0 +1,25 @@
+{
+	"name": "UniPlugin Base插件",
+	"id": "Uni-Base",
+	"version": "1.0.0",
+	"description": "",
+	"_dp_type": "nativeplugin",
+	"_dp_nativeplugin": {
+		"android": {
+			"plugins": [{
+				"type": "module",
+				"name": "Uni-Base-BaseModule",
+				"class": "com.hacjy.uniplugin_base.uni.BaseModule"
+			}],
+			"integrateType": "aar",
+			"compileOptions": {
+				"sourceCompatibility": "1.8",
+				"targetCompatibility": "1.8"
+			},
+			"abis": [
+				"armeabi-v7a",
+				"arm64-v8a"
+			]
+		}
+	}
+}

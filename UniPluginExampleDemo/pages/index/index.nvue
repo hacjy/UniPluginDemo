@@ -1,0 +1,73 @@
+<template>
+	<view class="content">
+		<image class="logo" src="/static/logo.png"></image>
+		<view class="text-area" @click="clickTitle">
+			<text class="title">{{title}}</text>
+		</view>
+	</view>
+</template>
+
+<script>
+	import Engine from '../../uni-base/base.js'
+	export default {
+		data() {
+			return {
+				title: 'Hello',
+				engine: null,
+			}
+		},
+		onLoad() {
+			this.init()
+		},
+		methods: {
+			async init() {
+				this.engine = await Engine.create({
+					title: this.title
+				})
+				console.log('init', this.engine == null ? 'engine is null' : this.engine)
+				this.addListener()
+			},
+			clickTitle() {
+				this.engine.setMessage({
+					"Message": "test"
+				})
+			},
+			addListener() {
+				let _this = this
+				this.engine.addListener('onSetMessage', (res) => {
+					console.log('onSetMessage', JSON.stringify(res))
+					_this.title = 'setMessage event called ' + Math.random(10).toFixed(1)
+				})
+			}
+		}
+	}
+</script>
+
+<style>
+	.content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logo {
+		height: 200rpx;
+		width: 200rpx;
+		margin-top: 200rpx;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 50rpx;
+	}
+
+	.text-area {
+		display: flex;
+		justify-content: center;
+	}
+
+	.title {
+		border: 20rpx solid blue;
+		font-size: 36rpx;
+		color: #000;
+	}
+</style>

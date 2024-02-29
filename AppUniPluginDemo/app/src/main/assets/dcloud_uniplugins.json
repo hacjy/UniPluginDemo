@@ -1,0 +1,14 @@
+{
+  "nativePlugins": [
+    {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "Uni-Base-BaseModule",
+          "class": "com.hacjy.uniplugin_base.uni.BaseModule"
+        }
+      ],
+      "integrateType": "aar"
+    }
+  ]
+}
