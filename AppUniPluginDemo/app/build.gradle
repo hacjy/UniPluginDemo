@@ -15,7 +15,7 @@ android {
         }
         manifestPlaceholders = [
                 JPUSH_PKGNAME : applicationId,
-                JPUSH_APPKEY  : "a08e772b82d69560f3933836", //JPush 上注册的包名对应的 Appkey：a08e772b82d69560f3933836
+                JPUSH_APPKEY  : "", //JPush 上注册的包名对应的 Appkey：a08e772b82d69560f3933836
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
                 XIAOMI_APPKEY : "MI-xx",//小米平台注册的appkey
                 XIAOMI_APPID  : "MI-xx",//小米平台注册的appid
